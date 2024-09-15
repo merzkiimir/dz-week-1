@@ -2,29 +2,30 @@
 #include <string>
 #include <cmath>
 /*
-cn = pervonachal'naya cena
-cn1 = cena posle skidki
-cn2 = cena posle platezhey
-n = kol-vo vznosov
-i = %stavka
+cn = первоначальная цена
+cn1 = цена после скидки
+cn2 = цена после платежей
+n = кол-во взносов
+i = %ставка
 
 */
 
 
 int main(){
+    setlocale(LC_ALL, "Russian");
     int klient, cn, cn1, tovar;
-    std::cout << "Stoimost' tovara:\n";
+    std::cout << "Стоимсоть товара:\n";
     std::cin >> cn;
-    std::cout << "Kachestvo tovara:\n";
+    std::cout << "Качество товара:\n";
     std::cout << "  1 - A\n";
     std::cout << "  2 - B\n";
     std::cout << "  3 - C\n";
     std::cin >> tovar;
-    std::cout << "Kachestvo klienta:\n";
-    std::cout << "  1 - otlichno\n";
-    std::cout << "  2 - horosho\n";
-    std::cout << "  3 - sredne\n";
-    std::cout << "  4 - ploho\n";
+    std::cout << "Качество клиента:\n";
+    std::cout << "  1 - отлично\n";
+    std::cout << "  2 - хорошо\n";
+    std::cout << "  3 - средне\n";
+    std::cout << "  4 - плохо\n";
     std::cin >> klient;
     if (klient == 1 and tovar == 1){
         cn1 = cn * 0.6;    
@@ -47,47 +48,47 @@ int main(){
         int n, i;
         int cn2;
         case 1 or 2:
-            std::cout << "sposob oplaty:\n";
-            std::cout << "  1 - nalichnye\n";
-            std::cout << "  2 - chek\n";
-            std::cout << "  3 - kredit\n";
+            std::cout << "Способ оплаты:\n";
+            std::cout << "  1 - наличные\n";
+            std::cout << "  2 - банковский чек\n";
+            std::cout << "  3 - кредит\n";
             std::cin >> opl;
             if (opl == 1){
                 cn2 = cn1;
             } else if (opl == 2){
-                std::cout << "Vvedite kolichestvo vznosov i procentnyu stavky (ot 3% do 15%)\n";
+                std::cout << "Введите количество взносов и процентную ставку (от 3% до 15%)\n";
                 std::cin >> n >> i;
                 cn2 = cn1 * (1 + (n * i)/100);
             } else if (opl == 3){
-                std::cout << "Vvedite kolichestvo platezhey\n";
+                std::cout << "введите количество платежей\n";
                 std::cin >> n;
-                std::cout << "Vvedite tip\n";
+                std::cout << "введите тип\n";
                 std::cin >> tip;
-                if (tip == "platina"){
+                if (tip == "платина"){
                     int i = 5;
                     cn2 = cn1 * pow((1 + i/100),n);
-                } else if (tip == "biznes"){
+                } else if (tip == "бизнес"){
                     int i = 2;
                     cn2 = cn1 * pow((1 + i/100),n);
                 }
             }
-            std::cout << "K oplate: " << cn2;        
+            std::cout << "к оплате: " << cn2;        
         break;
         case 3:
-            std::cout << "sposob oplaty:\n";
-            std::cout << "  1 - nalichnye\n";
-            std::cout << "  2 - chek\n";
+            std::cout << "Способ оплаты:\n";
+            std::cout << "  1 - наличные\n";
+            std::cout << "  2 - банковский чек\n";
             if (opl == 1){
                 cn2 = cn1;
             } else if (opl == 2){
-                std::cout << "Vvedite kolichestvo vznosov i procentnyu stavky (ot 3% do 15%)\n";
+                std::cout << "Введите количество взносов и процентную ставку (от 3% до 15%)\n";
                 std::cin >> n >> i;
                 cn2 = cn1 * (1 + (n * i)/100);
             }
-            std::cout << "K oplate: " << cn2;    
+            std::cout << "к оплате: " << cn2;    
         break;            
         default:
-            std::cout << "K oplate: " << cn1;
+            std::cout << "к оплате: " << cn1;
         break;
     }
 }
