@@ -2,27 +2,28 @@
 #include <string>
 #include <cmath>
 /* programm 1
-a - summ
-b - Kol-vo kvadratnih metrov s krishoy || MATERIAL (flag)
-c - Kol-vo kvadratnih metrov bez krishi || Nalichie vodi i kanalizacii (flag)
-d - kol-vo metrov sada || kol-vo etazhey
+a - сумма
+b - кол-во квадратных метров с крышей || материал (flag)
+c - кол-во квадратных метров без крыши || наличие воды и канализации (flag)
+d - кол-во квадратных метров сада || кол-во этажей
 (cyrillic ne rabotaet)
 */
 
 int main() {
+    setlocale(LC_ALL, "Russian");
     int b, c, d;
-    std::cout << "Kol-vo kvadratnih metrov s krishoy:\n";
+    std::cout << "кол-во квадратных метров с крышей:\n";
     std::cin >> b;
-    std::cout << "Kol-vo kvadratnih metrov bez krishi:\n";
+    std::cout << "кол-во квадратных метров без крыши:\n";
     std::cin >> c;
-    std::cout << "kol-vo metrov sada\n";
+    std::cout << "кол-во квадратных метров сада\n";
     std::cin >> d;
     
     int a = b * 5000 + c * 3000 + d * 1000;
-    std::cout << "MATERIAL:\n";
-    std::cout << "  1 - visokokachestvennyy material\n";
-    std::cout << "  2 - saman\n";
-    std::cout << "  3 - drugoy material\n";
+    std::cout << "материал:\n";
+    std::cout << "  1 - высококачественный материал\n";
+    std::cout << "  2 - саман\n";
+    std::cout << "  3 - другой материал\n";
     std::cin >> b;
     if (b == 1){
         a = a * 1.15;
@@ -31,14 +32,14 @@ int main() {
     } else {
         a = a * 1.05;
     }
-    std::cout << "Nalichie vodi i kanalizacii\n";
-    std::cout << "  1 - da\n";
-    std::cout << "  2 - net\n";
+    std::cout << "наличие воды и канализации\n";
+    std::cout << "  1 - дa\n";
+    std::cout << "  2 - нет\n";
     std::cin >> c;
     if (c == 1) {
         a = a + 2500;
     }
-    std::cout << "kol-vo etazhey:\n";
+    std::cout << "кол-во этажей:\n";
     std::cin >> d;
     if (b >= 4){
         a = a * 1.2;
