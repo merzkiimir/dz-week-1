@@ -33,6 +33,6 @@ int main(){
     std::cin >> t;
     float x2 = V * t * cos(a);
     float y2 = H + (V * t * sin(a)) - 0.5 * g * pow(t, 2);
-    std::cout << "x(t) = " << x2 << " , y(t) = " << y2 << "or rasstoyanie y(t) = ", abs(y2 - H);
+    std::cout << "x(t) = " << x2 << " , y(t) = " << y2 << "or rasstoyanie y(t) = " << abs(y2 - H);
     return 0;
 }
