@@ -6,7 +6,8 @@ fx; gx - functions
 */
 
 int main(){
-    std::cout << "Vvedute znachenie x:\n";
+    setlocale(LC_ALL, "Russian");
+    std::cout << "Введите значение x:\n";
     float x;
     std::cin >> x;
     float gx;
@@ -17,7 +18,7 @@ int main(){
     } else if (x >= 5){
         gx = log10(x + 10) - 2;
     } else {
-        std::cout << "znachenie x vne domena\n";
+        std::cout << "значение x вне домена\n";
         return 0;
     }
     float fx;
@@ -26,9 +27,9 @@ int main(){
     } else if ((gx >= -2) and (gx <= 1)){
         fx = pow((gx+2), 2);
     } else {
-        std::cout << "znachenie g(x) vne domena\n";
+        std::cout << "значение g(x) вне домена\n";
         return 0;
     }
-    std::cout << "znachenie f(x): " << fx;
+    std::cout << "значение f(x): " << fx;
     return 0;
 }
