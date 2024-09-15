@@ -12,10 +12,11 @@ fi = fi
 
 
 int main(){
+    setlocale(LC_ALL, "Russian");
     int k, omega;
-    std::cout << "Vvedite znachenie k:\n";
+    std::cout << "введите значение k:\n";
     std::cin >> k;
-    std::cout << "Vvedite znachenie w(omega):\n";
+    std::cout << "введите значение w(omega):\n";
     std::cin >> omega;
     double fi = asin(1/k);
     double T = (M_PI/2 - fi)/omega;
