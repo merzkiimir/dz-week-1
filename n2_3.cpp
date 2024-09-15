@@ -6,13 +6,13 @@ fx; gx - functions
 */
 
 int main(){
-    std::cout << "Vedute znachenie x:\n";
-    int x;
+    std::cout << "Vvedute znachenie x:\n";
+    float x;
     std::cin >> x;
     float gx;
-    if (-4 < x < -1){
+    if ((x < -1) and (x > -4)){
         gx = (abs(x + 6) / (abs(x + 3) - 3));
-    } else if (-1 < x < 5){
+    } else if ((x > -1) and (x < 5)){
         gx = sqrt(5-x) - 2;
     } else if (x >= 5){
         gx = log10(x + 10) - 2;
@@ -21,10 +21,10 @@ int main(){
         return 0;
     }
     float fx;
-    if (x < -2){
-        fx = abs(x/(1-x));
-    } else if (-2 <= x <= 1){
-        fx = pow((x+2), 2);
+    if (gx < -2){
+        fx = abs(gx/(1-gx));
+    } else if ((gx >= -2) and (gx <= 1)){
+        fx = pow((gx+2), 2);
     } else {
         std::cout << "znachenie g(x) vne domena\n";
         return 0;
