@@ -42,7 +42,7 @@ int main(){
     }else{
         cn1 = cn * 1.1;
     }
-    std::string tip;
+    int tip;
     switch (klient){
         int opl;
         int n, i;
@@ -63,13 +63,15 @@ int main(){
                 std::cout << "введите количество платежей\n";
                 std::cin >> n;
                 std::cout << "введите тип\n";
+                std::cout << "  1 - платина\n";
+                std::cout << "  2 - бизнес\n";
                 std::cin >> tip;
-                if (tip == "платина"){
-                    int i = 5;
-                    cn2 = cn1 * pow((1 + i/100),n);
-                } else if (tip == "бизнес"){
-                    int i = 2;
-                    cn2 = cn1 * pow((1 + i/100),n);
+                if (tip == 1){
+                    float j = 5.;
+                    cn2 = cn1 * pow((1 + j/100),n);
+                } else if (tip == 2){
+                    float j = 2.;
+                    cn2 = cn1 * pow((1 + j/100),n);
                 }
             }
             std::cout << "к оплате: " << cn2;        
