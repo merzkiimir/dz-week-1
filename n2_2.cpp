@@ -20,6 +20,9 @@ int main(){
     float g = 9.8;
     std::cout << "введите значение H(высота):\n";
     std::cin >> H;
+    if (H < 0){
+        std::cout << "неверное значение\n";
+    } else {
     std::cout << "введите значение V(скорость):\n";
     std::cin >> V;
     std::cout << "введите значение a(угол):\n";
@@ -32,8 +35,12 @@ int main(){
     std::cout << "введите значение t(момент времени):\n";
     float t;
     std::cin >> t;
+    if (t > T) {
+        std::cout << "неверное значение\n";
+    } else {
     float x2 = V * t * cos(a);
     float y2 = H + (V * t * sin(a)) - 0.5 * g * pow(t, 2);
     std::cout << "x(t) = " << x2 << " , y(t) = " << y2 << " или расстояние y(t) ~ " << abs(y2 - H);
-    return 0;
+    return 0;}}
 }
+
