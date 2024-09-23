@@ -52,17 +52,17 @@ int main()
 
 	
 	char cByte = 'A';
-	cByte    = 0x42; // "B"
-	cByte    = 66;  // "B"
-	cByte    = -1;   // -1 '�'
+	cByte    = 0x42; // "B" 66
+	cByte    = 66;  // "B" 66
+	cByte    = -1;   // -1 '�' (нет -1 для ASCII)
 
 	unsigned char ucByte = 0x41; // "A"
 	ucByte   = 'B';// "B"
-	ucByte   =	-1; // 255 '�'
+	ucByte   =	-1; // 255 '�' = 2**8 - 1
 
 	int iInt =  0xffffffff; // -1
 
-	unsigned int uiInt = 0xffffffff; // 4294967295
+	unsigned int uiInt = 0xffffffff; // 4294967295 = 2**32 - 1
 
 	float fFloat = 1.f;  // 1
 	double dDouble = 1.; // 1
